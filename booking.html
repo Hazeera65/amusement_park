@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size:cover;
+      background-image: url("window.webp");
+      background-attachment:fixed;
+      margin:0%;
+      display: flex;
+    
+    }
+
+    form {
+      background: #e9e5e5;
+      overflow:auto;
+       width: 700px;
+       margin: 50px 100px 2px 300px;
+      
+    }
+
+    h2 {
+      background: #141414;
+      color: #f8f2f2;
+      padding: 20px;
+      margin:0;
+      font-size: 1.5rem;
+    }
+
+    label {
+      display: block;
+      padding: 15px;
+      color: #333;
+    }
+
+    input,
+    select,
+    textarea {
+      width: calc(100% - 30px);
+      padding: 10px;
+      margin: 8px 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background: #0a0a0a;
+      color: #fff;
+      cursor: pointer;
+      
+    }
+
+    input[type="submit"]:hover {
+      background: #111111;
+    }
+    button,a{
+        background-color:black;
+        color: white;
+        height:32px;
+        width: 650px;
+        margin: 1%;
+        
+    }
+    a1{
+    border-style: solid;
+    color:white;
+    border-width: 1px;
+}
+    
+  </style>
+  <title>Amusement Park Registration</title>
+</head>
+<body><h2><a href="rides.html"><b>⬅BACK</b></a></h2>
+    <form>
+        <h2>Amusement Park Registration</h2>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="tickets">Number of Tickets:</label>
+    <input type="number" id="tickets" name="tickets" min="1" required>
+
+    <label for="visit-date">Visit Date:</label>
+    <input type="date" id="visit" name="visit-date" required>
+
+    <label for="ticket-type">Ticket Type:</label>
+    <select id="ticket-type" name="ticket-type" required>
+      <option value="regular">Regular</option>
+      <option value="vip">VIP</option>
+      <option value="family">Family</option>
+    </select>
+
+    <label for="special-requests">Special Requests:</label>
+    <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+    <input type="submit" value="reset" >
+   <center> <button type="submit" value="submit">
+        <a href="theme.html">submit</a></button>
+
+    </form>
+    
+<script>
+  const scriptURL = 'https://script.google.com/a/macros/citchennai.net/s/AKfycbwZQxs3xdjpaN8HDf7qaO-LlhwREiwhi1l3-ZVYoYJ4JlrW7Z2aISYGB6i4AFNMW2uS/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+
+</script>
+<h3><a href="contant.html"><b>NEXT</b></a></h3>
+</body>
+</html>
